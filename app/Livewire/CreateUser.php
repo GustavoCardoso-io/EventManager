@@ -5,20 +5,23 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CreateUser extends Component
 {
+    use WithPagination;
+
     public  $users = [];
 
-    public $nome ;
-    public $email ;
-    public $senha ;
+    public $nome;
+    public $email;
+    public $senha;
     public $role = 'user';
 
 
 
-
-    public function mount(){
+    public function mount()
+    {
         $this->users = User::all();
     }
 
@@ -28,7 +31,8 @@ class CreateUser extends Component
         return view('livewire.create-user');
     }
 
-    public function save(){
+    public function save()
+    {
         $user  =  User::create([
             'name' => $this->nome,
             'email' => $this->email,
@@ -36,16 +40,18 @@ class CreateUser extends Component
             'role' => $this->role
         ]);
 
+        $this->nome = '';
+        $this->email = '';
+        $this->senha = '';
+
         $this->dispatch('user-created');
     }
 
+
+
     #[On('user-created')]
-    public function ListUsers(){
+    public function ListUsers()
+    {
         $this->users = User::all();
     }
-
-    public function SearchUser(){
-        $this->users = User::where('name', 'like', '%' . $this->userNomeSearch . '%')->get();
-    }
-
 }

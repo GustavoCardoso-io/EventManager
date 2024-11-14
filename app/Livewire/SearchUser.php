@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class SearchUser extends Component
@@ -24,6 +25,7 @@ class SearchUser extends Component
         return view('livewire.search-user');
     }
 
+    #[On('user-created')]
     public function updatedUserNomeSearch()
     {
         $this->users = User::where('name', 'like', '%' . $this->userNomeSearch . '%')
