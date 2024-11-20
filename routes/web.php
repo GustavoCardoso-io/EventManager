@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/create', CreateUser::class);
+Route::get('/livewire/create-user',CreateUser::class)->name('usercreate');
 Route::get('/login', Login::class)->name('login');
 
 Route::middleware('auth')->group(function () {

@@ -1,5 +1,5 @@
 <div
-    class="w-full max-w-screen-2xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+    class="w-9/12 max-w-screen-2xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
 
     <form class="space-y-6" wire:submit='save'>
         <h1 class=" text-center text-2xl font-medium text-gray-900 dark:text-white"> Cadastro de Usuários</h1>
