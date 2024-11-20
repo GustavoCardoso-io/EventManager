@@ -18,8 +18,6 @@ class CreateUser extends Component
     public $senha;
     public $role = 'user';
 
-
-
     public function mount()
     {
         $this->users = User::all();

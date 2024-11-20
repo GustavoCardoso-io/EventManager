@@ -8,21 +8,21 @@
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="nome">Nome:</label>
                 <input
                     class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    wire:model.live='nome' type="text">
+                    wire:model.live='user.nome' type="text">
             </div>
             <div class="w-full">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white " for="email">Email:
                 </label>
                 <input
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    wire:model.live='email' type="text">
+                    wire:model.live='user.email' type="text">
             </div>
             <div class="w-full">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="password">Senha:
                 </label>
                 <input
                     class=" w-full bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500   dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    wire:model.live='senha' type="text">
+                    wire:model.live='user.senha' type="text">
             </div>
             <div></div>
             <div></div>
@@ -36,8 +36,6 @@
     <div class="py-20">
         <livewire:search-user>
     </div>
-
-
 
 <nav aria-label="Page navigation example">
     <ul class="flex items-center -space-x-px h-8 text-sm">
@@ -60,6 +58,5 @@
       </li>
     </ul>
   </nav>
-
 
 </div>
