@@ -24,10 +24,17 @@
                     class=" w-full bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500   dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     wire:model.live='senha' type="text">
             </div>
-            <div></div>
+            <div class="w-full">
+                <label for="selectOption" class="block text-sm font-medium text-gray-700">Escolha uma opção</label>
+                <select id="selectOption" wire:model="role"  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+                    <option value="">Selecione</option>
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuário</option>
+                </select>
+            </div>
             <div></div>
             <button
-                class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                class="w-10/12 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                 type="submit">Salvar
             </button>
         </div>

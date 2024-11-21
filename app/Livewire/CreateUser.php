@@ -16,7 +16,7 @@ class CreateUser extends Component
     public $nome;
     public $email;
     public $senha;
-    public $role = 'user';
+    public $role;
 
     public function mount()
     {
@@ -31,7 +31,7 @@ class CreateUser extends Component
 
     public function save()
     {
-        dd($this->name);
+
         $user  =  User::create([
             'name' => $this->nome,
             'email' => $this->email,
@@ -42,6 +42,7 @@ class CreateUser extends Component
         $this->nome = '';
         $this->email = '';
         $this->senha = '';
+        $this->role = '';
 
         $this->dispatch('user-created');
     }
