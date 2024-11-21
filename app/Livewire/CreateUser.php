@@ -31,6 +31,7 @@ class CreateUser extends Component
 
     public function save()
     {
+        dd($this->name);
         $user  =  User::create([
             'name' => $this->nome,
             'email' => $this->email,
