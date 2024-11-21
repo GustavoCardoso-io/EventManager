@@ -45,6 +45,12 @@
             </button>
         </div>
     </form>
+    <!-- Mensagem de sucesso -->
+    @if (session()->has('success'))
+        <div class="mt-4 text-sm text-green-600">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <div class="py-20">
         <livewire:search-user>
