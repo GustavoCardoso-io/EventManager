@@ -14,6 +14,8 @@ class CreateUser extends Component
 
     public  $users = [];
 
+    // Validações de propriedades para poder cadastrar o usuario!
+
     #[Validate('required|string|min:3|max:50')]
     public $nome = '';
 
@@ -26,22 +28,28 @@ class CreateUser extends Component
     #[Validate('required|in:admin,user')]
     public $role = '';
 
+
+    //Faz o prenchimento do users para poder ser exibido na view!
     public function mount()
     {
         $this->users = User::all();
     }
 
+    //renderiza a view create user!
     public function render()
     {
 
         return view('livewire.create-user');
     }
 
+    //Função para salvar o usuario no banco de dados!
     public function save()
     {
 
-         $this->validate();
+        //Valida as informações passadas pelo usuario!
+        $this->validate();
 
+        //Cria o usuario no banco de dados!
         $user  =  User::create([
             'name' => $this->nome,
             'email' => $this->email,
@@ -49,17 +57,20 @@ class CreateUser extends Component
             'role' => $this->role
         ]);
 
+        //Reseta as informações nas propriedades!
         $this->nome = '';
         $this->email = '';
         $this->senha = '';
         $this->role = '';
 
+        //Emiti um sinal que o usuario foi criado para ser usado onde lista os usuarios!
         $this->dispatch('user-created');
-         session()->flash('success', 'Usuário criado com sucesso!');
+        //Envia uma mensagem pela session para informa sobre o criamento do usuario!
+        session()->flash('success', 'Usuário criado com sucesso!');
     }
 
 
-
+    //Lista todos os usuarios criados!
     #[On('user-created')]
     public function ListUsers()
     {

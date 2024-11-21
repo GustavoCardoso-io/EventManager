@@ -11,6 +11,8 @@ class SearchUser extends Component
 {
 
     use WithPagination;
+
+    //Propriedades para poder fazer uma pesquisa e ordenação de usuarios!
     public $userNomeSearch = '';
     public $sortField = 'name'; // Campo padrão para ordenar
     public $sortDirection = 'asc'; // Direção padrão
@@ -26,7 +28,7 @@ class SearchUser extends Component
         ]);
     }
 
-    // Alterna a direção da ordenação
+    // Alterna a direção da ordenação, da tabela de acordo com a interação no cabeçalho! 
     public function sortBy($field)
     {
         if ($this->sortField === $field) {

@@ -8,7 +8,6 @@ use Livewire\Component;
 
 class Login extends Component
 {
-
     public $email = '';
     public $password = '';
 
@@ -17,6 +16,7 @@ class Login extends Component
         'password' => 'required',
     ];
 
+    //Faz a validação do usuario com o banco para saber que tipo de usuario é retorna para a sua devida view!
     public function login()
     {
         $this->validate();
@@ -30,7 +30,7 @@ class Login extends Component
         session()->flash('error', 'Credenciais inválidas.');
     }
 
-
+    //Rendereiza a view login!
     public function render()
     {
         return view('livewire.auth.login');
