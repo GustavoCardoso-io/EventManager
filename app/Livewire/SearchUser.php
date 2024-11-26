@@ -17,7 +17,6 @@ class SearchUser extends Component
     public $sortField = 'name'; // Campo padrão para ordenar
     public $sortDirection = 'asc'; // Direção padrão
 
-
     #[On('user-created')]
     public function render()
     {
@@ -28,7 +27,7 @@ class SearchUser extends Component
         ]);
     }
 
-    // Alterna a direção da ordenação, da tabela de acordo com a interação no cabeçalho! 
+    // Alterna a direção da ordenação, da tabela de acordo com a interação no cabeçalho!
     public function sortBy($field)
     {
         if ($this->sortField === $field) {

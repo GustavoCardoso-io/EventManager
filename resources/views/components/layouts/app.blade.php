@@ -10,11 +10,11 @@
     <title>Event Manager</title>
 </head>
 
-<body class="content-around ">
+<body >
     <div>
         <livewire:navbar>
     </div>
-<div class="justify-items-center py-4 px-4">
+<div class="justify-items-center py-4">
     {{ $slot }}
 </div>
 
