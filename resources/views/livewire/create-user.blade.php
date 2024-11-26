@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="relative flex justify-end z-0 w-full mb-5 group">
-            <x-form.button.save> </x-form.button.save>
+            <x-form.button.save></x-form.button.save>
         </div>
     </x-form.form>
     <!-- Mensagem de sucesso -->

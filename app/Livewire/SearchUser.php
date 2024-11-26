@@ -9,7 +9,6 @@ use Livewire\WithPagination;
 
 class SearchUser extends Component
 {
-
     use WithPagination;
 
     //Propriedades para poder fazer uma pesquisa e ordenação de usuarios!
