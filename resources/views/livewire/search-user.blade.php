@@ -2,7 +2,7 @@
 
     <div class="py-5">
         <x-form.label title='Nome Usuário:'></x-form.label>
-        <x-form.input propertie='userNomeSearch'></x-form.input>
+        <x-form.input propertie='userNomeSearch' type='text'></x-form.input>
     </div>
 
     <x-table.table>
@@ -26,13 +26,15 @@
         </x-table.thead>
         <tbody>
             @foreach ($users as $user)
-                <tr wire:key = "{{ $user->id }}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <th scope="row" class="px-6 py-3">{{ $user->id }}</th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $user->name }}</th>
-                    <th scope="row" class="px-6 py-3">{{ $user->email }}</th>
-                    <th scope="row" class="px-6 py-3">{{ $user->role }}</th>
-                </tr>
+                <x-table.tbody.tr key='{{$user->id}}'>
+                    {{-- <tr wire:key = "{{ $user->id }}" --}}
+                        {{-- class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"> --}}
+                        <x-table.tbody.tr.th value='{{ $loop->index }}'></x-table.tbody.tr.th>
+                        {{-- <th scope="row" class="px-6 py-3">{{ $loop->index }}</th> --}}
+                        <x-table.tbody.tr.th value='{{ $user->name }}'></x-table.tbody.tr.th>
+                        <x-table.tbody.tr.th value='{{ $user->email }}'></x-table.tbody.tr.th>
+                        <x-table.tbody.tr.th value='{{ $user->role }}'></x-table.tbody.tr.th>
+                </x-table.tbody.tr>
             @endforeach
         </tbody>
     </x-table.table>

@@ -1,3 +1,3 @@
 @props(['value','title'])
 
-<option value='{{$value}}'>{{$title}}</option>
+<option value='{{$value}}'>{{$title}} </option>

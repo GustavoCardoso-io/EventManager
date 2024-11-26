@@ -3,19 +3,19 @@
     <x-form.form action='save' title='Cadastro de Usuário'>
         <div class="relative z-0 w-full mb-5 group">
             <x-form.label title='Nome:'></x-form.label>
-            <x-form.input propertie='nome'></x-form.input>
+            <x-form.input propertie='nome' type='text'></x-form.input>
         </div>
 
         <div class="relative z-0 w-full mb-5 group">
             <x-form.label title='Email:'></x-form.label>
-            <x-form.input propertie='email'></x-form.input>
+            <x-form.input propertie='email' type='email'></x-form.input>
         </div>
 
         <div class="grid md:grid-cols-2 md:gap-6">
 
             <div class="relative z-0 w-full mb-5 group">
                 <x-form.label title='Senha:'></x-form.label>
-                <x-form.input propertie='senha'></x-form.input>
+                <x-form.input propertie='senha' type='password'></x-form.input>
             </div>
             <div class="relative z-0 w-full mb-5 group">
                 <x-form.label title='Escolha Permissão:'></x-form.label>
@@ -26,8 +26,15 @@
                 </x-form.select>
             </div>
         </div>
-        <div class="relative flex justify-end z-0 w-full mb-5 group">
-            <x-form.button.save></x-form.button.save>
+
+        <div class="grid grid-cols-3  gap-6">
+            <div>
+                <x-form.button.save />
+            </div>
+            <div></div>
+            <div>
+                <x-form.button.back />
+            </div>
         </div>
     </x-form.form>
     <!-- Mensagem de sucesso -->
